@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>特步网上商城</title>
+        <link rel="stylesheet" type="text/css" href="../css/header.css" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+        <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+        <script type="text/javascript" src="../js/title_nav.js"></script>
+        <script type="text/javascript" src="../js/body_nav.js"></script>  
+        <script type="text/javascript" src="../js/indexnav.js"></script>
+        <script type="text/javascript"> 
+        /*json导航数据*/                
+           $(function(){
+                    $.ajax({
+                    url:'../json/banner.json',
+                    type:'GET',
+                    success:function(a){
+                        var html = '';
+                        for(var i = 0 ; i<a.length; i ++){
+                        
+                            html +='<li>'+a[i].title+'<div class ="bannerrightul_div" id ="banner1111"><dl><dt>1</dt><dd>1</dd></dl><dl><dt>2</dt><dd>2</dd></dl><dl><dt>3</dt><dd>3</dd></dl><p>4</p><img src="../'+a[i].src+'"/></div></li>'                             
+                        }
+                        $(".bannerrightul").html(html);
+                        var oDl = $(".bannerrightul_div").find('dl');//18
+                        var oDt = $(".bannerrightul_div").find('dl').find("dt");
+                        var oDd = $(".bannerrightul_div").find('dl').find("dd");
+                          for(var j = 0;j<oDl.length;j++){
+                            $(oDt[j]).html(1111);
+                            $(oDd[j]).html(2222)
+                          }
+                        var oP = $(".bannerrightul_div").find('p');
+                       for(var k = 0;k <oP.length;k++){
+                          $(oP[k]).html(333331233132132132132132132)
+                        }
+                    }
+                });
+            })   
+        </script>
+        <script type="text/javascript">
+       /* json导航数据*/
+         $(function(){
+          $.ajax({
+            url:'../json/left.json',
+            type:'GET',
+              success:function(res){
+                var html = "";
+                var html1 = "";
+                var html2 = "";
+                var html3 ="";
+                var html4 = "";
+               /* alert($(".aa1").length)*/
+                for(var h = 0;h<res.length;h++){
+                    for(var m = 0;m<res[h].name.length;m++){
+                      html += '<a href="#" class="aa">'+res[h].name[m]+'</a>'
+                    }
+                   $(".bbdiv4").eq(h).html(html);
+                   html = "";
+                  }
+                  /*alert(res[0].title.length)*/
+                    for(var h = 0;h <res.length-1; h++){
+                      for( n = 0; n<res[h].title.length;n++){
+                        html1 += '<a href="#">'+res[h].title[n]+'</a>'
+                      }     
+                     $(".aa1").eq(h).html(html1);
+                     html1 = "";
+                  }          
+                    for(var h = 0;h <res.length-1; h++){
+                      for( var n = 0; n<res[h].title.length;n++){
+                        html1 += '<a href="#">'+res[h].title[n]+'</a>'
+                          /*alert(html1);*/
+                      }
+                    /* alert($(".aa1").length)*/
+                     $(".aa1").eq(h).html(html1);
+                     html1 = "";
+                  }          
+                   for(var h = 0;h <res.length-1; h++){
+                      for(var o = 0; o<res[h].type.length;o++){
+                        html2 += '<a href="#">'+res[h].title[o]+'</a>'
+                      }
+                     $(".aa2").eq(h).html(html2);
+                     html2 = "";
+                  }      
+                  for(var h = 0;h <res.length-1; h++){
+                      for(var p = 0; p<res[h].type.length;p++){
+                        html3 += '<a href="#">'+res[h].child[p]+'</a>'
+                      }
+                     $(".div1p3").eq(h).html(html3);
+                     html3 = "";
+                  }     
+                    for(var h = 0;h <res.length; h++){
+                      html4 += '<img src="../'+res[h].src+'"/>'
+                     $(".aa3").eq(h).html(html4);
+                     html4 = "";
+                  }     
+                } 
+              })
+          })
+        </script>
+        <script type="text/javascript">
+        /*右侧固定导航*/
+             $(function(){
+              $(".rightbanner").find(".rb0").hover(function(){
+                $(this).find('div').css("display","block")
+              }, function() {
+                $(this).css("background","#272727")
+                $(this).find("div").css("display","none")
+              });
+              $(".rightbanner").hover(function() {
+                $(".rightbannerbg").animate({right: 0}, 500)
+              }, function() {
+                $(".rightbannerbg").animate({right: -30}, 500)
+              });
+             })
+        </script>
+        <script type="text/javascript">
+        /*导航栏滚动效果*/
+        window.onload = function(){
+          var banner_left = document.getElementById("banner_left");
+          var bbldiv1 = document.getElementById("bbldiv1");
+          banner_left.onmouseover=function(){
+           bbldiv1.style.display = "block"
+          }
+          banner_left.onmouseout = function(){
+           bbldiv1.style.display = "none"
+          }
+        }
+       </script>
+        <script type="text/javascript">
+            /* body2开始*/
+          $(function(){
+            $(".body2leftbg").hover(function() {
+              $(this).css("position","relative")
+              $(this).css("color","#c1121d")
+              $(this).animate({top:-3},800)
+            }, function() {
+              $(this).css("position","")
+              $(this).css("color","")
+            });
+            $(".body2right").hover(function() {
+              $(this).css("position","relative")
+              $(this).css("color","#c1121d")
+              $(this).animate({top:-3},800)
+            }, function() {
+              $(this).css("position","")
+            });
+          })
+        </script>
+
+        </head>
+<script type="text/javascript">
+    $(function(){
+      $(".md").find("a").click(function(){
+       
+        for(var i=0;i<$(".md").find("a").length;i++){
+          $(".md").find("span").css("background","gray")
+           $(".md").find("div").css("color","gray")
+          $(this).find("span").css("background","red")
+          $(this).find("div").css("color","red")
+          $(this).find("span").css("color","#ffffff")
+        }
+      })
+    })
+</script>
+<script type="text/javascript">
+     window.onload = function(){
+        var bin00 = document.getElementById("bin00");
+        var bin20 = document.getElementById("bin20");
+        bin00.onblur = function(){
+          var str = this.value;
+          if(str.charAt(0)>="0" && str.charAt(0)<="9"){
+            alert("不能以数字开头");
+            return;
+             }
+             if(str.length<6 || str.length>20){
+               alert("长度不符合要求");
+               return;
+             }
+             for(var i=0;i<str.length;i++){
+               if((str[i]>='a' && str[i]<='z')||
+               (str[i]>='A' && str[i]<='Z')||
+               (str[i]>='0' && str[i]<='9')|| (str[i]=='_')){
+               
+               }else{
+                alert("只能包含数字、字母和下划线");
+                return;
+               }
+             }
+        }
+     }
+</script>
+<style type="text/css">
+  #banner #banner_left #bbldiv1{width:220px;height:720px;position:absolute;background:black;z-index: 1;display:none;top:182px;color:#ffffff;}
+  .rightbannerbg{width:30px;height:1400px;position:absolute;right:-30px;background:#272727;z-index: 1;}
+
+  /* bod开始 */
+
+.bod{overflow:hidden;padding-left: 140px;background:#f4f4f4;padding:40px 0 110px 140px;}
+.bod img{float:left;}
+.bod div{float:left;width:316px;height:380px;padding:0 35px;border:1px solid gray;}
+.bod div .bp1{width:305px;font-size: 18px;padding:35px 0 32px 0;}
+.bod div .bp1 .ba1{margin:0 58px 0 43px;}
+.bod div .bp1 .ba1:hover{color:#c01a20;border-bottom: 1px solid #c01a20;}/* 登录选项卡滑动效果 */
+.bod div .bp1 .ba2{color:#808080;}
+.bod div .bp1 .ba2:hover{border-bottom: 1px solid #808080;}
+.bod div .bp2{width:305px;font-size: 14px;padding:30px 0 12px 0;}
+.bod div .bp2 .ba3{margin:0 100px 0 20px;}
+.bod div form{width:305px;}
+.bod div form input{width:305px;height:36px;border:1px solid #e2e2e2;}
+.bod div form input:hover{border:1px solid blue;}/* 滑动边框变蓝色 */
+.bod div .bin1{width:305px;height:45px;background:#c01a20;font-weight: 900;font-size: 20px;color:#ffffff;}
+.bod div .bin0{margin-bottom:10px;background:url("../images/denglu.jpg") no-repeat center left #ffffff;padding-left: 30px;}
+.bod div .bin2{background:url("../images/denglu1.jpg") no-repeat center left #ffffff;padding-left: 30px;}
+.bod div .bp3{padding:15px 0;}
+.bod div .bp3 li{float:left;width:18px;height:15px;}
+.bod div .bdiv2{width:290px;height:42px;padding:0;border:0;}
+</style>
+    <body>
+        <!-- 正文开始 -->
+      <!-- 右侧边导航 -->
+      <div class="rightbannerbg"></div>
+       <div class="rightbannerbg1"></div> 
+      <div class="rightbanner">
+        <div class="rb1 rb0">
+          <img src="../images/rb1.jpg" height="36" width="29" alt="" />
+          <div class="rb11">
+            我的特步
+          </div>
+        </div>
+        <div class="rb2 rb0">
+            <img src="../images/rb2.jpg" height="21" width="29" alt="" />
+            <div class="rb21">你的购物车是空的</div>
+            <p>购</p>
+            <p>物</p>
+            <p>车</p>
+            <a class="titlesp111 titlesp1">
+            0</a>  
+        </div>
+        <div class="rb3 rb0">
+          <img src="../images/rb3.jpg" height="24" width="29" alt="" />
+          <p>联</p>
+          <p>系</p>
+          <p>客</p>
+          <p>服</p>
+          <div class="rb31 rb0">
+            <div class="rb311"></div>
+            <div class="rb312">售后咨询</div>
+          </div>
+        </div>
+        <div class="rb4 rb0">
+          <img src="../images/rb4.jpg" height="27" width="29" alt="" />
+          <div class="rb41">
+            <div class="rb411">我的收藏
+                <span>×</span>
+            </div>
+            <div class="rb412">你还没有收藏的商品奥,马上去逛逛吧:
+                <a href="#">特步首页</a>
+            </div>
+          </div>
+        </div>
+        <div class="rb5 rb0">
+          <img src="../images/rb5.jpg" height="28" width="29" alt="" />
+          <div class="rb51">
+            <img src="../images/weixin.png" height="279" width="286" alt="" />
+          </div>
+        </div>
+        <div class="rb6 rb0">
+          <img src="../images/rb6.jpg" height="12" width="29" alt="" />
+          <p>TOP</p>
+          <div class="rb61">返回顶部</div>
+        </div>
+      </div>
+       <!-- title开始-->
+       <div id = "titlebg">
+           <div id = "title">
+               <p id= "title_1">
+                   <span id = "title_sp0">您好,欢迎光临特步官方商城!</span>
+                   <a href="enter.html" class = "cl1">请登陆</a><a href="register.html">免费注册</a><a href="#">特步合伙人</a>
+               </p>
+               <ul id ="title_2">
+                   <li class = "title_2cl1">
+                        <a class="titlesp1">
+                        0</a>我的特步                    
+                        <p class="title_2ul">
+                           <a href="#">待支付</a><br>
+                           <a href="#">待收货</a><br>
+                           <a href="#">待评价</a><br>
+                           <a href="#">站内信<a class="titlesp1 titlesp3">0</a></a><br>
+                        </p>
+                   </li>
+                   <li >品牌官网</li>
+                   <li class="title_2cl2">
+                   手机特步
+                    <div class="title_2cl21">
+                        <img src="../images/weixin.png" height="279" width="286" alt="" />
+                    </div>
+                   </li>
+                   <li class="tle_2li">购物车<a class="titlesp2">(0)</a>件</li>
+               </ul>
+            </div>
+       </div>
+     <!--   search开始 -->
+        <div id = "search">
+            <img src="../images/logo.gif" height="80" width="380" id = "search_img1"/>
+            <div>
+                <form id = "search_form">
+                    <input type="text"  id = "inp1"/>
+                    <input type="button" value= "搜索" id = "inp2"/>
+                    <p>热门搜索
+                        <a href="#">专柜同款</a><a href="#">男跑鞋</a>
+                        <a href="#">女跑鞋</a><a href="#">棉服/羽绒服</a>
+                        <a href="#">清仓</a>
+                    </p>
+                </form>
+                <div id = "searchright">
+                        <ol >
+                           <li class = "active"></li>
+                           <li></li>
+                           <li></li>
+                        </ol>
+                        <ul >
+                            <li><img src="../images/search1.jpg" height="65" width="216" /></li>
+                            <li><img src="../images/search2.jpg" height="65" width="216" /></li>
+                            <li><img src="../images/search3.jpg" height="65" width="216" /></li>
+                            <li><img src="../images/search1.jpg" height="65" width="216" /></li>
+                        </ul> 
+                </div>              
+            </div>
+        </div>
+             <!--  banner开始 -->
+       <div id = "bannerbg">
+            <div id = "banner">
+               <div id = "banner_left">全部商品分类
+                   <div id = "bbldiv1"><!-- 左边下拉框 --> 
+                            <div class="bbdiv2 ">
+                              <h2>男鞋</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#"  class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3">
+                                        <!-- <img src="images/img2.jpg" /> -->
+                                      </a>
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>女鞋</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#" class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3"></a>
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>男装</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#"  class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3"></a>  
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>女装</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#"  class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3"></a>
+                                    <!--   <img src="images/img2.jpg" /> -->
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>儿童</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#"  class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3"></a>
+                                     <!--  <img src="images/img2.jpg" /> -->
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>配件</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                                  <div>
+                                      <p class = "div1p1">
+                                        <a href="#" class='div1pcl'>男鞋</a>
+                                        <a class = "aa1"> 
+                                        </a>
+                                      </p>
+                                      <p class="div1p2">
+                                        <a href="#" class="div1pcl">男鞋</a>
+                                       <a href="#"  class="aa2">
+                                       </a>                                     
+                                      </p>
+                                      <p class ="div1p3">
+                                      </p>
+                                      <a href="#" class="aa3"></a>
+                                      <!-- <img src="images/img2.jpg" /> -->
+                                  </div>              
+                          </div>
+                          <div class="bbdiv2 ">
+                              <h2>活动推荐</h2>
+                              <p class="bbdiv4">   
+                              </p>
+                          </div>
+                   </div> 
+               </div>
+               <div class="bannerright">
+                   <div class="bdiv1">首页</div>
+                   <ul class="bannerrightul">  
+                   </ul>
+                   <div class="bdiv2 bdiv3">团购</div>
+                   <div class="bdiv2 bdiv3">特惠</div>
+                   <div class="bdiv2">360go</div>
+               </div>
+            </div>
+       </div>
+
+<!-- 登录注册 -->
+<div class="bod">
+    <img src="../images/enter.jpg" height="382" width="500" alt="" />
+    <div>
+      <p class="bp1">
+        <a href="enter.html" class="ba1">登录特步</a>
+        <a href="register.html" class="ba2">免费注册</a>
+      </p>
+      <form action="">
+        <input type="text" placeholder = "邮箱/手机号" class="bin0" id ="bin00"/><br>
+        <input type="password" placeholder ="密码" class = "bin2" id = "bin20" />
+      </form>
+      <p class="bp2">
+        <input type="checkbox" /><a class="ba3">下次自动登录</a><a class="ba4">忘记密码</a>
+      </p>
+      <input type="submit" value ="登入" class="bin1"/>
+      <p class="bp3">你也可以使用以下帐号登录</p>
+      <div class="bdiv2">
+        <a href="#"><img src="../images/qq.jpg" height="24" width="40" alt="" /></a>
+        <a href="#"><img src="../images/wb.jpg" height="24" width="49" alt="" /></a>
+        <a href="#"><img src="../images/wx.jpg" height="24" width="52" alt="" /></a>
+        <a href="#"><img src="../images/tb.jpg" height="24" width="45" alt="" /></a>
+        <a href="#"><img src="../images/rr.jpg" height="24" width="48" alt="" /></a>
+        <a href="#"><img src="../images/zfb.jpg" height="21" width="60" alt="" /></a>
+      </div>
+    </div>
+</div>  
+<div class="bodb">
+  
+</div>
+
+           <!-- foot开始 -->
+       <div class="foot">
+           <ul class="footul1">
+               <li class="footli1">关于我们</li>
+               <li>公司简介</li>
+               <li>联系我们</li>
+               <li>品牌加盟</li>
+               <li>授权分销商</li>
+               <li>特步合伙人</li>
+           </ul>
+           <ul>
+               <li class="footli1">购物指南</li>
+               <li>常见问题</li>
+               <li>用户注册</li>
+               <li>购物流程</li>
+               <li>邮件订阅</li>
+               <li>活动推荐</li>
+           </ul>
+           <ul>
+               <li class="footli1">售后服务</li>
+               <li>配送方式</li>
+               <li>防伪查询20位</li>
+               <li>二维码防伪查询</li>
+               <li>会员体系介绍</li>
+           </ul>
+           <ul >
+               <li class="footli1">支付方式</li>
+               <li>支付宝</li>
+               <li>银联支付</li>
+               <li>发票制度</li>
+               <li>优惠券使用说明</li>
+           </ul>
+           <div class="footright">
+               <h2>400-720-1333</h2>
+               <h4>周一到周日 9:00-23:00</h4>
+               <img src="../images/kefu.jpg" height="36" width="129" alt="" />
+           </div>
+            <img src="../images/footbg.jpg" height="44" width="100%" alt="" />
+            <p class="footp1">
+                <a href="#">关于特步</a>
+                <a href="#">人才招聘</a>
+                <a href="#">特步新闻</a>
+                <a href="#">品牌合作</a>
+                <a href="#">帮助中心</a>
+                <a href="#">商城公告</a>
+                <a href="#">友情链接</a>
+                <a href="#">联系我们</a>
+            </p>
+            <p>
+                <a href="#">友情链接</a>
+                <a href="#">品牌圈</a>
+                <a href="#">内衣品牌</a>
+                <a href="#">音平商城</a>
+                <a href="#">海淘网店</a>
+                <a href="#">村安网城</a>
+                <a href="#">返利网</a>
+                <a href="#">时尚世界</a>
+                <a href="#">钻戒网</a>
+                <a href="#">化妆品招商</a>
+                <a href="#">返利</a>
+                <a href="#">眼镜</a>
+                <a href="#">饮料品牌大全</a>
+                <a href="#">亿超眼睛</a>
+                <a href="#">楚天运动频道</a>
+            </p>
+            <p>
+                特步跑鞋 Copyright 2011 xtep.com 特步运动服 All Rights Reserved 特步官方旗舰店 ICP：闽ICP备05021253号-1 特步官网专卖店 
+            </p>
+            <div class="foot-img">
+                <img src="../images/yl.gif" height="35" width="140" alt="" />
+                <img src="../images/cx.png" height="41" width="114" alt="" />
+                <img src="../images/sm.png" height="47" width="124" alt="" />
+            </div>
+       </div>
+    </body>
+</html>
