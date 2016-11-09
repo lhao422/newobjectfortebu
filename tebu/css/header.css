@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2016-10-27 18:26:29
 * @Last Modified by:   Marte
-* @Last Modified time: 2016-11-04 14:41:28
+* @Last Modified time: 2016-11-09 20:58:08
 */
 /*   通配 */
 body,ul,li,dl,dt,dd,p,ol,h1,h2,h3,h4,h5,h6,form,img,table,fieldset,legend{margin:0; padding:0;}
@@ -23,9 +23,15 @@ input,a{outline:none;}
 .rb1{height:60px;padding:30px 0;}
 .rb1 .rb11{width:80px;height:40px;background:#d5d7d7;position:absolute;left:-80px;top:30px;text-align: center;line-height: 40px;color:#616365;display:none;}
 .rb2{height:150px;color:#ffffff;}
-.rb21{width:300px;height:90px;background:#d5d7d7;position:absolute;left:-300px;top:130px;text-align: center;line-height: 90px;color:#616365;display:none;}
+.rb21{width:300px;height:700px;background:#ffffff;position:absolute;left:-300px;top:-150px;text-align: center;line-height: 90px;color:#616365;display:none;border:1px solid gray;overflow:auto;}
+.autoScroll{
+    overflow:auto;
+}
+.rb21:hover{
+    display:block;
+}
 .rb2 p{padding:2px 0 2px 7px;}
-.titlesp111{padding:1px 5px;background:#ff5000;border-radius: 10px;line-height: 5px;color:#ffffff;margin-left: 5px;}
+.titlesp111{padding:1px 5px;background:red;border-radius: 10px;line-height: 5px;color:#ffffff;margin-left: 5px;}
 .rb3{height:145px;color:#ffffff;}
 .rb31{width:120px;height:160px;background:#d5d7d7;position:absolute;left:-120px;top:270px;display:none;}
 .rb311{height:110px;width:120px;background:url('../images/sqkf.jpg') no-repeat center center;}
@@ -56,7 +62,7 @@ input,a{outline:none;}
 #title_2 li .title_2ul{position:absolute;top:30px;left:813px;width:98px;background:#ffffff;z-index: 1;display:none;text-align: center;}
 .titlesp1{padding:1px 5px;background:#c1121d;border-radius: 10px;line-height: 5px;color:#ffffff;}
 .titlesp3{position:absolute;left:68px;top:98px;height:13px;line-height: 13px;}
-.titlesp2{color:#c1121d;}
+.titlesp2{color:red;}
 #title_2 .title_2cl1{background:url("../images/down.jpg")no-repeat center right;}
 #title_2 .title_2cl2{background:url("../images/down.jpg")no-repeat center right,url("../images/phone.jpg") no-repeat center left;}
 /*手机特步下拉框*/

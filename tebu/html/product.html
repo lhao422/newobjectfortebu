@@ -9,18 +9,6 @@
         <script type="text/javascript" src="../js/title_nav.js"></script>
         <script type="text/javascript" src="../js/body_nav.js"></script>  
         <script type="text/javascript" src="../js/indexnav.js"></script>
-        <style type="text/css">
-            #banner #banner_left #bbldiv1 {
-                width: 220px;
-                height: 720px;
-                position: absolute;
-                background: black;
-                z-index: 1;
-                display: none;
-                top: 182px;
-                color: #ffffff;
-            }
-        </style>
         <script type="text/javascript"> 
         /*json导航数据*/                
            $(function(){
@@ -142,7 +130,6 @@
            menu.style.width="100%";
            bbldiv1.style.display ="none";
            bbldiv1.style.top = "42px";
-          /* banner111.style.top = "42px";*/
             banner_left.onmouseover=function(){
             bbldiv1.style.display = "block"
            }
@@ -151,9 +138,7 @@
            }
         } else{
           menu.style.position="";
-        bbldiv1.style.display ="block";
          bbldiv1.style.top = "182px";
-         /*banner111.style.top = "180px";*/
         }  
       if(top>=500){
       md.style.display = "block";
@@ -197,6 +182,285 @@
         }
       })
     })
+</script>
+
+<style type="text/css">
+  #banner #banner_left #bbldiv1 {
+    width: 220px;
+    height: 720px;
+    position: absolute;
+    background: black;
+    z-index: 1;
+    display: none;
+    top: 182px;
+    color: #ffffff;
+}
+  .probg{width:100%;
+    background:#f4f4f4;}
+  .probg p{height:50px;
+          line-height: 50px;
+          padding-left: 30px;}
+  .pro{width:1200px;
+        height:600px;
+        margin:0 auto;
+        background:#ffffff;
+        }
+        
+  #proleft{
+          height:450px;
+          width:450px;
+          float: left;
+          border:1px solid gray;
+          position:relative;
+        }
+  #proleftmarkbox{
+    height:450px;
+    width:450px;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index: 10;
+  }
+  #proleftposition{
+    width:200px;
+    height:200px;
+    background: #b6b6b6;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+   display: none;
+  }
+#bbox{
+  width:450px;
+  height:450px;
+  border:1px solid gray;
+  position:absolute;
+  left:600px;
+  overflow:hidden;
+  display:none;
+
+  }
+  #ball{
+    position:absolute;
+    width:800px;
+    height:800px;
+    left:0;
+    top:0;
+  }
+
+  .procenter{
+    width:92px;
+    height:450px;
+    float:left;
+  }
+  .procenter div{
+    margin-bottom:10px;
+    border:1px solid gray;
+    margin-left: 10px;
+  }
+/*   滑动效果 */
+  .procenter div:hover{
+    border:1px solid red;
+  }
+  .proright{
+    width:515px;
+    height:470px;
+    float:left;
+    margin-left: 45px;
+  } 
+  .proright h2{
+    width:500px;
+  }
+  .proright h3{
+    width:500px;
+    color:red;
+    padding:20px 0 25px 0;
+  }
+  .proright .pp1{
+    color:gray;}
+  .proright .ps1{
+    color:red;
+    }
+  .proright .ps2{
+    color:red;
+    font-weight: 900;
+    font-size:25px;
+  }
+  .proright .ps3{
+    color:#ffffff;
+    padding:0 2px;
+    background:red;
+  }
+  .proright .pp1{
+    border-top:1px solid gray;
+    border-bottom: 1px solid gray;  
+  }
+  .proright .pp2{
+     border-bottom: 1px solid gray;
+  }
+  .ps4{
+    color:red;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid gray;
+  }
+  .ps5{
+    color:red;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid gray;
+  }
+  /* 滑动效果 */
+  .pp4 .ps5:hover{
+    border:1px solid red;
+  }
+  .ps6{
+    color:green;
+  }
+  .pp3{
+      overflow:hidden;
+      padding-bottom: 5px;
+  }
+  .pp3 span{
+    float:left;
+  }
+  .pp3 img{
+    float:left;
+    margin:10px;
+    border:1px solid gray;
+  }
+  /* 图片滑动效果 */
+  .pp3 img:hover{
+    border:1px solid red;
+  }
+  .pp4 span{
+    margin:5px;
+  }
+  .pp4 .ps5{
+    padding:5px;
+    border:1px solid gray;
+    color:gray;
+  }
+  .ps7{
+    border:1px solid gray;
+    padding:10px;
+  }
+  .pp7{
+    width:180px;
+    height:40px;
+    float:left;
+    color:#ffffff;
+    background:red;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .pp8{
+    width:180px;
+    height:40px;
+    float:left;
+    color:red;
+    border:1px solid red;
+    text-align: center;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  .ps8{
+    margin-right: 5px;
+  }
+  .pro1{
+    width:1200px;
+    margin:0 auto;
+    height:1000px;
+    margin-top: 5px;
+  }
+  /* 左侧详情 */
+  .pro1left{
+    width:220px;
+    float:left;
+    height:1000px;
+  }
+  .pro1p1{
+    height:35px;
+    font-size: 16px;
+    font-weight: 900;
+    background:red;
+    color:#ffffff;
+    text-align: center;
+  }
+  .pro1right{
+    width:960px;
+    float:left;
+    margin-left: 10px;
+  }
+  .pro1left h2{
+    border-top: 1px solid gray;
+    padding:10px;
+    font-size: 14px;
+  }
+  .pro1ul{
+  height:0px;
+  overflow:hidden;
+  }
+  .pro1ul li{
+    font-size: 14px;
+    padding-left: 15px;
+    padding-top: 5px;
+  }            
+</style>
+<script type="text/javascript">
+    window.onload = function(){
+      var proleft = document.getElementById("proleft");
+      var proleftmarkbox = document.getElementById("proleftmarkbox");
+      var proleftposition = document.getElementById("proleftposition");
+      var bbox = document.getElementById("bbox");
+      var ball = document.getElementById("ball");
+      proleftmarkbox.onmouseover = function(){
+        proleftposition.style.display = "block";
+        bbox.style.display = "block";
+      }
+      proleftmarkbox.onmouseout = function(){
+        proleftposition.style.display = "none";
+        bbox.style.display = "none";
+      }
+      proleftmarkbox.onmousemove = function(ev){
+        var ev = ev||window.event;
+        var left = ev.offsetX - proleftposition.offsetWidth / 2;
+        if(left < 0){
+          left = 0;
+        }else if(left > proleftmarkbox.offsetWidth - proleftposition.offsetWidth){
+          left = proleftmarkbox.offsetWidth - proleftposition.offsetWidth;
+        }
+        proleftposition.style.left = left + "px";
+        var top = ev.offsetY - proleftposition.offsetHeight / 2;
+        if(top < 0){
+          top = 0;
+        }else if(top > proleftmarkbox.offsetHeight - proleftposition.offsetHeight){
+          top = proleftmarkbox.offsetHeight - proleftposition.offsetHeight;
+        }
+        proleftposition.style.top = top + "px";
+               /* 运动比例*/
+       var a = left / (proleftmarkbox.offsetWidth - proleftposition.offsetWidth);
+       var b = top / (proleftmarkbox.offsetHeight - proleftposition.offsetHeight);
+       ball.style.left = -a*(ball.offsetWidth - bbox.offsetWidth) + "px";
+       ball.style.top = -b*(ball.offsetHeight - bbox.offsetHeight) + "px";
+      }
+   } 
+
+
+</script>
+<script type="text/javascript">
+  $(function(){
+    $(".pro1left").find("h2").hover(function(){
+      $(".pro1left").find("h2").find("ul").animate({height:0}, 0)
+    $(this).find("ul").animate({height:110}, 500)
+  }, function() {
+    $(this).find("ul").animate({height:0}, 0)
+  });
+  })
 </script>
     <body>
         <!-- 正文开始 -->
@@ -458,6 +722,103 @@
             </div>
        </div>
 
+
+<div class="probg">
+  <p>商城首页>男鞋>踪训鞋>特步专柜正品</p>
+  <div class="pro">
+    <div id="proleft">
+      <div id="proleftmarkbox"></div>
+        <img src="../images/test1.jpg" height="450" width="450" alt="" />
+      <div id="proleftposition"></div>
+    </div>
+    <div id="bbox">
+      <div id="ball">
+        <img src="../images/test1.jpg" height="800" width="800" alt="" />
+      </div>
+    </div>
+    <div class="procenter"> 
+      <div><img src="../images/test1.jpg" height="80" width="80" alt="" /></div>
+      <div><img src="../images/test1.jpg" height="80" width="80" alt="" /></div>
+      <div><img src="../images/test1.jpg" height="80" width="80" alt="" /></div>
+      <div><img src="../images/test1.jpg" height="80" width="80" alt="" /></div>
+      <div><img src="../images/test1.jpg" height="80" width="80" alt="" /></div>
+    </div>
+    <div class="proright">
+      <h2>特步 专柜同款 2016秋冬男子综训鞋 耐磨减震 男鞋运动鞋 984319520178</h2>
+      <h3>爆款直降 双11价提前享 错开物流高峰 先人一步收货！ TIME 11.1-11.11</h3>
+      <p class="pp1">官方折扣价 <span class="ps1"> ￥ </span><span class="ps2"> 229.00 </span><span class="ps3"> 62% </span><span class="ps4"> ￥ 369.00 (降价通知)</span></p>
+      <p class="pp2">累计评价: <span class="ps4">66</span>累计售出: <span class="ps5">3215</span>赠送积分: <span class="ps6">229.00</span>分</p>
+      <p class="pp3"><span>颜&nbsp;&nbsp;色:</span><img src="../images/test1.jpg" height="40" width="40" alt="" /><img src="../images/test1.jpg" height="40" width="40" alt="" /><img src="../images/test1.jpg" height="40" width="40" alt="" /><img src="../images/test1.jpg" height="40" width="40" alt="" /></p>
+      <p class="pp4"><span>尺&nbsp;&nbsp;码:</span><span class="ps5">39码</span><span class="ps5">40码</span><span class="ps5">41码</span><span class="ps5">42码</span><span class="ps5">43码</span></p>
+      <p class="pp5"><span>我 要 买:</span><span class="ps7">-</span><span class="ps7">1</span><span class="ps7">+</span> 件 库存:<span>7101</span>件</p>
+      <p class="pp6"><p class="pp7"><span class="ps8">加入购物车</span></p><p class="pp8"><span class="ps8">立即购买</span></p></p>
+    </div>
+    <img src="../images/prop.png" height="36" width="1132" alt="" />
+  </div>
+</div>
+<div class = "pro1">
+  <div class="pro1left">
+    <p class="pro1p1">商品分类</p>
+    <h2>男鞋
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <h2>女鞋
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <h2>男装
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <h2>女装
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <h2>儿童
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <h2>配件
+      <ul class="pro1ul">
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+        <li><a href="#">跑鞋</a></li>
+      </ul>
+    </h2>
+    <img src="../images/pro1left.jpg" height="7272" width="217" alt="" />
+  </div>
+  <div class="pro1right">
+    <img src="../images/pro1right.jpg" height="19947" width="970" alt="" />
+  </div>
+</div>
            <!-- foot开始 -->
        <div class="foot">
            <ul class="footul1">

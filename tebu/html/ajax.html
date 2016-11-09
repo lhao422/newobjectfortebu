@@ -198,6 +198,203 @@
       })
     })
 </script>
+<style>
+	.probg{
+		width:100%;
+        background:#f4f4f4;
+	}
+	.probg .pro{
+		margin:0 auto;
+		width:1200px;
+        background:#ffffff;
+	}
+	.pro .prop1{
+		
+	}
+	.pro span{
+		margin-right:90px;
+	}
+	.pro p{height:45px;
+		line-height: 45px;
+		border-bottom: 1px dashed gray;
+		}
+	.prop4{
+		width:85px;
+		text-align: center;
+		margin: 0 auto;
+	}
+    .prop5{
+        display:none;
+    }
+	.p1111,.p112,.p113,.p114{
+		float: right;
+	}
+    /* 选项滑动效果 */	
+    .pro span:hover{
+        border-bottom:1px solid red;
+        color:red;
+    }
+    .a,.b,.c,.d{
+      height:0;
+   }
+   .p2s5,.p3s1,.p4s1,.p5s1{
+       
+   }
+   .p1112,.p1121,.p1131,.p1141{
+    text-align: center;
+    display:none;
+   }
+   .pro h3{
+    padding:5px;
+    background:#f4f4f4;
+   }
+   .pag{
+    background:#f4f4f4;
+    padding:12px;
+   }
+   .pag p{
+        margin:12px;
+        padding:12px;
+        background:#ffffff; 
+   }
+   .pag p .pags1{
+    background:#f4f4f4;
+    padding:5px;
+    margin-right: 10px;
+   }
+   .pag p .pags2{
+    float:right;
+   }
+   .pag p .pags3{
+    color:red;
+   }
+ .productsbg{
+    background:#f4f4f4;
+ }
+ .products{
+    width:1200px;
+    margin:0 auto;
+    background:#ffffff;
+
+ }
+ .pros{
+    width:275px;
+    height:400px;
+    float:left;
+    margin:30px 10px 0 10px;
+     border:1px solid #ffffff;
+ }
+/*  产品滑动效果边框 */
+.pros:hover{
+ border:1px solid gray;
+}
+ .pros .pimg{
+    width:250px;
+    height:260px;
+    margin:0 auto;
+ }
+ .pros .pimg1{
+    width:35px;
+    height:35px;
+   float:left;
+   margin-left: 12px;
+ }
+ .pros p{
+    margin:3px 0;
+    padding:0;
+    width:263px;
+    float:left;
+    padding-left: 12px;
+    font-size: 14px;
+    color:#666666;
+ }
+ .prosp2{
+    font-weight: 900;
+ }
+ .prosp2 .pross3{
+    font-size: 18px;
+    color:red;
+ }
+ .prosp3{
+    display:none;
+ }
+ .prosp1{
+    display:none;
+ }
+.pros .pross2{
+  float:right;
+  background:red;
+  color:#ffffff;
+  padding:2px;
+ }
+/*  滑动效果  */
+.pros:hover .prosp3{
+    display:block;
+}
+.pros:hover .prosp1{
+    display:block;
+}
+</style>
+<script type="text/javascript">
+    $(function(){
+        $(".p1111").click(function(){
+            $(".a").css("height","15px");
+            $(".p1112").css("display","block")
+        })
+        $(".p2s5").click(function(){
+            $(".a").css("height","0px");
+            $(".p1112").css("display","none")
+        })
+        $(".p112").click(function(){
+            $(".b").css("height","15px");
+            $(".p1121").css("display","block")
+        })
+        $(".p3s1").click(function(){
+            $(".b").css("height","0px");
+            $(".p1121").css("display","none")
+        })
+        $(".p113").click(function(){
+            $(".d").css("height","15px");
+            $(".p1131").css("display","block")
+        })
+        $(".p4s1").click(function(){
+            $(".c").css("height","0px");
+            $(".p1141").css("display","none")
+        })
+
+         $(".p114").click(function(){
+            $(".c").css("height","15px");
+            $(".p1141").css("display","block")
+        })
+         $(".prop4").click(function(){
+            $(".prop5").css("display","block")
+            $(".p1131").css("display","block")
+         })
+         $(".p5s1").click(function(){
+            $(".d").css("height","0px");
+            $(".p1131").css("display","none");
+            $(".prop5").css("display","none")
+         })
+    })
+</script>
+<script type="text/javascript">
+     $(function(){
+        $.ajax({
+            url:'../json/pros.json',
+            type:'GET',
+            success:function(b){
+                var html = ''; 
+              for(var i = 0;i <b.length;i++){
+                var html1 = "";
+                html1 += '<div class="pros"><img src="'+b[i].src+'"class = "pimg"/><img src = "'+b[i].src1+'" class="pimg1"/><img src ="'+b[i].src2+'" class="pimg1"/><p>'+b[i].title+'</p><p class="prosp1">'+b[i].title1+'</p><p class="prosp2"><span class="pross3">'+b[i].price+'</span></p><p class="prosp3"><span class="pross1">收藏</span><span class="pross2">加入购物车</span></p></div>';
+                html += html1
+              }
+                $(".products").html(html)
+            }
+        })
+
+     })
+</script>
     <body>
         <!-- 正文开始 -->
       <!-- 右侧边导航 -->
@@ -457,7 +654,58 @@
                </div>
             </div>
        </div>
+	
+<div class="probg">	
+	<div class="pro">
+		<h3>首页>所有分类></h3>
+		<img src="../images/pro11.png" alt="" />
+		<p class="prop1">已选择<span>...</span></p>
+		<p class="prop2">性别:
+			<input type="checkbox" class="a"/> <span class="p2s1">男</span>
+			<input type="checkbox" class="a"/> <span class="p2s2">女</span>
+			<input type="checkbox" class="a"/> <span class="p2s3">中性</span>
+			<input type="checkbox" class="a"/> <span class="p2s4">男童</span>
+			<span class="p1111">多选</span>
+		</p>
+        <p class="p1112"><span class="p2s5">取消</span></p>
+		<p class="prop3">分类:
+			<input type="checkbox" class="b"/> <span class="">跑步鞋</span>
+			<input type="checkbox" class="b"/> <span>户外鞋</span>
+			<input type="checkbox" class="b"/> <span>休闲鞋</span>
+			<input type="checkbox" class="b"/> <span>跑步鞋</span>
+			<input type="checkbox" class="b"/> <span>户外鞋</span>
+			<input type="checkbox" class="b"/> <span>休闲鞋</span>
+			<span class="p112">多选</span>
+		</p>
+        <p class="p1121"><span class="p3s1">取消</span></p>
+		<p>尺码:
+			<input type="checkbox" class="c"/> <span>39码</span>
+			<input type="checkbox" class="c"/> <span>40码</span>
+			<input type="checkbox" class="c"/> <span>41码</span>
+			<input type="checkbox" class="c"/> <span>42码</span>
+			<input type="checkbox" class="c"/> <span>43码</span>
+			<span class="p114">多选</span>
+		</p>
+        <p class="p1141"><span class="p4s1">取消</span></p>
+		<p class="prop4">更多</p>
+		<p class="prop5">价格:
+			<input type="checkbox" class="d"/> <span>1-100元</span>
+			<input type="checkbox" class="d"/> <span>100-200元</span>
+			<input type="checkbox" class="d"/> <span>200-300元</span>
+			<span class="p113">多选</span>
+        </p>
+        <p class="p1131"><span class="p5s1">取消</span></p>    
+	</div>
 
+</div>
+<div class="pag">
+    <p><span class="pags1">默认</span><span class="pags1">新品</span><span class="pags1">人气</span><span class="pags1">折扣</span><span class="pags1">价格</span><span class="pags2">共<span class="pags3">255</span>件商品 &nbsp;&nbsp;1/5></span></p>
+<div class="productsbg">
+    <div class="products">
+      
+    </div>
+</div>
+</div>
            <!-- foot开始 -->
        <div class="foot">
            <ul class="footul1">
